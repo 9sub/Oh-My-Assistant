@@ -12,15 +12,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.5.3
+    - name: Deploy
+      uses: appleboy/ssh-action@master
       with:
-        ssh-private-key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-
-    - name: Deploy to EC2
-      run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} <<EOF
-          cd /path/to/your-project
-          git pull
-          docker-compose down
-          docker-compose up -d --build
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USER_NAME }}
+        key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+        port: ${{ secrets.EC2_SSH_PORT }}
+        script: |
+          cd ~
+          docker-compose down doraemong_web
+          docker rmi doraemong_web:latest
+          docker-compose up -d
