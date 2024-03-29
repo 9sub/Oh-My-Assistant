@@ -20,6 +20,4 @@ jobs:
         key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
-          docker-compose down doraemong_web
-          docker rmi doraemong_web:latest
           docker-compose up -d
