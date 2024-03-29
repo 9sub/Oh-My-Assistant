@@ -21,6 +21,6 @@ jobs:
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
           cd ~/doraemong_web
-          docker-compose down doraemong_web
+          docker-compose down doraemon_web
           docker images prune
           docker-compose up -d
