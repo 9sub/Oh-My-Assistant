@@ -20,4 +20,6 @@ jobs:
         key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
+          pwd
+          ls
           docker-compose up -d
