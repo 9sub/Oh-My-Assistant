@@ -22,5 +22,4 @@ jobs:
         script: |
           cd ~/doraemon_web
           docker-compose down doraemon_web
-          docker image prune
           docker-compose up -d
