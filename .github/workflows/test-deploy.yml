@@ -20,7 +20,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
-          cd ~/doraemong_web
+          cd ~/doraemon_web
           docker-compose down doraemon_web
           docker image prune
           docker-compose up -d
