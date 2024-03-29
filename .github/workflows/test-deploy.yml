@@ -20,4 +20,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
-          ls >> pwd.txt
+          cd ~/doraemong_web
+          docker-compose down doraemong_web
+          docker images prune
+          docker-compose up -d
