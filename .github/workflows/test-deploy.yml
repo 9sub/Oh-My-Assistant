@@ -18,6 +18,28 @@ jobs:
           password: ${{secrets.DOCKERHUB_PASSWORD}}
       - name: Build docker file and setting deploy files
         run: |
+          echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" > .env
+          echo "MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}" > .env
+          echo "SQLALCHEMY_DATABASE_URL=${{ secrets.SQLALCHEMY_DATABASE_URL }}" > .env
+
+          echo "HOST=${{ secrets.HOST }}" > .env
+          echo "DB=${{ secrets.DB }}" > .env
+          echo "USER=${{ secrets.USER }}" > .env
+          echo "PASSWORD=${{ secrets.PASSWORD }}" > .env
+
+          echo "AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }}" > .env
+          echo "AWS_S3_ACCESS_KEY_ID=${{ secrets.AWS_S3_ACCESS_KEY_ID }}" > .env
+          echo "AWS_S3_SECRET_ACCESS_KEY=${{ secrets.AWS_S3_SECRET_ACCESS_KEY }}" > .env
+          echo "AWS_S3_REGION=${{ secrets.AWS_S3_REGION }}" > .env
+
+          echo "SECRETE_KEY=${{ secrets.SECRETE_KEY }}" > .env
+
+          echo "LORA_MODEL_SERVER=${{ secrets.LORA_MODEL_SERVER }}" > .env
+          echo "DREAMSTYLER_MODEL_SERVER=${{ secrets.DREAMSTYLER_MODEL_SERVER }}" > .env
+          echo "POSE_MODEL_SERVER=${{ secrets.POSE_MODEL_SERVER }}" > .env
+
+          echo "HOSTNAME=${{ secrets.HOSTNAME }}" > .env
+
           docker-compose up --build
           docker push gangyub/boilerplate-fastapi-mysql-docker-frontend
           docker push gangyub/boilerplate-fastapi-mysql-docker-backend
@@ -39,4 +61,27 @@ jobs:
         script: |
           cd ~/doraemon_web
           docker-compose down doraemon_web
+
+                    echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" > .env
+          echo "MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}" > .env
+          echo "SQLALCHEMY_DATABASE_URL=${{ secrets.SQLALCHEMY_DATABASE_URL }}" > .env
+
+          echo "HOST=${{ secrets.HOST }}" > .env
+          echo "DB=${{ secrets.DB }}" > .env
+          echo "USER=${{ secrets.USER }}" > .env
+          echo "PASSWORD=${{ secrets.PASSWORD }}" > .env
+
+          echo "AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }}" > .env
+          echo "AWS_S3_ACCESS_KEY_ID=${{ secrets.AWS_S3_ACCESS_KEY_ID }}" > .env
+          echo "AWS_S3_SECRET_ACCESS_KEY=${{ secrets.AWS_S3_SECRET_ACCESS_KEY }}" > .env
+          echo "AWS_S3_REGION=${{ secrets.AWS_S3_REGION }}" > .env
+
+          echo "SECRETE_KEY=${{ secrets.SECRETE_KEY }}" > .env
+
+          echo "LORA_MODEL_SERVER=${{ secrets.LORA_MODEL_SERVER }}" > .env
+          echo "DREAMSTYLER_MODEL_SERVER=${{ secrets.DREAMSTYLER_MODEL_SERVER }}" > .env
+          echo "POSE_MODEL_SERVER=${{ secrets.POSE_MODEL_SERVER }}" > .env
+
+          echo "HOSTNAME=${{ secrets.HOSTNAME }}" > .env
+          
           docker-compose up
