@@ -22,5 +22,6 @@ jobs:
         script: |
           cd ~/doraemon_web
           docker-compose down doraemon_web
-          docker compose build
-          docker compose up
+          docker-compose up db -d
+          docker-compose up backend -d
+          docker-compose up frontend -d
