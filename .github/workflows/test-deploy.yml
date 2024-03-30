@@ -48,6 +48,11 @@ jobs:
           docker push gangyub/boilerplate-fastapi-mysql-docker-frontend
           docker push gangyub/boilerplate-fastapi-mysql-docker-backend
 
-          ssh -i ${{ secrets.EC2_SSH_PRIVATE_KEY }} ${{ secrets.SERVER_USER_NAME }}@${{ secrets.SERVER_IP }}
-
-          docker-compose up -d
+      - name: executing docker-compose up on main server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER_NAME }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          script: |
+            docker-compose up -d
