@@ -62,7 +62,7 @@ jobs:
           cd ~/doraemon_web
           docker-compose down doraemon_web
 
-                    echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" > .env
+          echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" > .env
           echo "MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}" > .env
           echo "SQLALCHEMY_DATABASE_URL=${{ secrets.SQLALCHEMY_DATABASE_URL }}" > .env
 
