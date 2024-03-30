@@ -40,7 +40,7 @@ jobs:
 
           echo "HOSTNAME=${{ secrets.HOSTNAME }}" >> .env
 
-          docker-compose up --build
+          docker-compose up
           docker push gangyub/boilerplate-fastapi-mysql-docker-frontend
           docker push gangyub/boilerplate-fastapi-mysql-docker-backend
           docker push gangyub/mysql
