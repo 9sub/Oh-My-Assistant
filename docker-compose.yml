@@ -3,7 +3,7 @@ version: "3"
 services:
   db:
     container_name: db
-    image: gangyub/mysql:latest
+    image: mysql:latest
     volumes:
       - mysql_data_dev:/var/lib/mysql
     environment:
@@ -16,7 +16,6 @@ services:
   backend:
     container_name: backend
     image: gangyub/boilerplate-fastapi-mysql-docker-backend:latest
-    build: ./backend
     restart: always
     ports:
       - 8000:8000
@@ -35,9 +34,6 @@ services:
   frontend:
     container_name: frontend
     image: gangyub/boilerplate-fastapi-mysql-docker-frontend:latest
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
     command: npm start
     restart: always
     ports:
