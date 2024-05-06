@@ -29,6 +29,7 @@
 
 ## Live Demo <a id = 'Demo'></a>
 - 다음 [링크](http://www.gangyub.site)에서 직접 실행해보실 수 있습니다.
+- 현재 서버반납으로 이미지 학습 사용이 불가합니다.
 
 ### Background Image Generator
 https://github.com/kylew1004/doraemon_web/assets/20416616/1b37ceaf-63a6-4d03-8aa5-eb76818fd304
