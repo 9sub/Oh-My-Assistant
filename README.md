@@ -154,7 +154,7 @@ Noise로부터 포즈가 변경된 캐릭터 이미지가 생성되도록 Denois
 
 ## Links
 - [발표영상](https://youtu.be/huVYC4bZgOg)
-- [Wrapup Reports](https://pebble-ziconium-f61.notion.site/Wrap-up-Reports-42bf8884d38244afbb5ef24a6f06ed3e?pvs=4)
+- [Wrapup Reports]([https://pebble-ziconium-f61.notion.site/Wrap-up-Reports-42bf8884d38244afbb5ef24a6f06ed3e?pvs=4](https://acute-mars-86b.notion.site/Final-Project-Wrap-up-Reports-36868e08577d4f31ace11d9b69a6fbdf?pvs=4))
 
 
 
