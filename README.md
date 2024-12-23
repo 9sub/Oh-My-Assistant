@@ -75,7 +75,6 @@ https://github.com/kylew1004/doraemon_web/assets/20416616/59ba6d9f-e47d-4781-a62
     <img src="https://github.com/kylew1004/doraemon_web/assets/5775698/254a54c9-9f83-4f00-a26d-e73a57ac4bb5" width="80%>
 </p>
 
-- ddd
 - 서비스 간의 상호 의존도를 낮추기 위해 웹 서버와 모델 서버를분리하였습니다. 
 - 웹 서빙을 담당하는 웹 프론트엔드 서버, 백엔드 서버 및 db 서버는 전부 aws ec2 서버에서 호스팅되고, 모델 서버는 NCP v100서버에서 호스팅되어 있습니다. 
 - 백엔드 서버는 프론트에서 받은 인풋 이미지나 프롬프트를 모델 서버로 보내게 되고, 모델 서버는 이에 대한 응답으로 해당 인풋에 대한 inference 결과를 전송합니다. 
